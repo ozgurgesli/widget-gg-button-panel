@@ -29,10 +29,10 @@
 }
 
 #com-ozgurgesli-widget-gg-button-panel .row1 {
-    border:1px dashed red;
+    border:none;
 }
 #com-ozgurgesli-widget-gg-button-panel .row2 {
-    border:1px dashed blue;
+    border:none;
 }
     </style>
 
@@ -259,7 +259,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             var gcode = $(evt.delegateTarget).data('content');
             gcode += "\n"; 
             console.log("GCmd: " + gcode);
-            alert( gcode );
+//            alert( gcode );
             this.publishSend( gcode );
         },
 
@@ -488,18 +488,78 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
                 </div>
                 
                 <br>
-                <div class="btn-group">
-                    <table> 
+                <div class="panel-body btn-group">
+                    <table border=0>
+                    <th colspan=4><center>300mm</center></th>
                     <tr class=row1><td>
-                        <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 6px 0;" data-content="G0 X-200">200<span class="glyphicon glyphicon-circle-arrow-left"></span></button></button>
+                        <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 6px 0;" data-content="G0 X-300">-X<span class="glyphicon glyphicon-circle-arrow-left"></span></button></button>
                         </td><td>
                         <div class="btn-group-vertical">
-                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y200">200<span class="glyphicon glyphicon-circle-arrow-up"></span></button>
-                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y-200">200<span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y300">+Y<span class="glyphicon glyphicon-circle-arrow-up"></span></button>
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y-300">-Y<span class="glyphicon glyphicon-circle-arrow-down"></span></button>
                         </div>
                         </td>
                         <td>
-                    <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 X200">200<span class="glyphicon glyphicon-circle-arrow-right"></span></button></button>
+                    <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 4px 0;" data-content="G0 X300">+X<span class="glyphicon glyphicon-circle-arrow-right"></span></button></button>
+                </td></tr></table>
+                </div>
+
+                <div class="panel-body btn-group">
+                    <table border=0>
+                    <th colspan=4><center>100mm</center></th>
+                    <tr class=row1><td>
+                        <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 6px 0;" data-content="G0 X-100">-X<span class="glyphicon glyphicon-circle-arrow-left"></span></button></button>
+                        </td><td>
+                        <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y100">+Y<span class="glyphicon glyphicon-circle-arrow-up"></span></button>
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y-100">-Y<span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+                        </div>
+                        </td>
+                        <td>
+                    <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 4px 0;" data-content="G0 X100">+X<span class="glyphicon glyphicon-circle-arrow-right"></span></button></button>
+                </td></tr></table>
+                </div>
+
+                <br>
+                <div class="panel-body btn-group">
+                    <table border=0>
+                    <th colspan=4><center>10mm</center></th>
+                    <tr class=row1><td>
+                        <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 6px 0;" data-content="G0 X-200">-X<span class="glyphicon glyphicon-circle-arrow-left"></span></button></button>
+                        </td><td>
+                        <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y200">+Y<span class="glyphicon glyphicon-circle-arrow-up"></span></button>
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y-200">-Y<span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+                        </div>
+                        </td>
+                        <td>
+                    <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 4px 0;" data-content="G0 X200">+X<span class="glyphicon glyphicon-circle-arrow-right"></span></button></button>
+                    </td><td>
+                        <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Z1">Z+<span class="glyphicon glyphicon-circle-arrow-up"></span></button>
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y-1">Z-<span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+                        </div>
+                </td></tr></table>
+                </div>
+
+                <div class="panel-body btn-group">
+                    <table border=0>
+                    <th colspan=4><center>5mm</center></th>
+                    <tr class=row1><td>
+                        <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 6px 0;" data-content="G0 X-50">-X<span class="glyphicon glyphicon-circle-arrow-left"></span></button></button>
+                        </td><td>
+                        <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y50">+Y<span class="glyphicon glyphicon-circle-arrow-up"></span></button>
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y-50">-Y<span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+                        </div>
+                        </td>
+                        <td>
+                    <button type="button" class="btn btn-default btn-gcodeRel dbltall" style="margin: 4px 0;" data-content="G0 X50">+X<span class="glyphicon glyphicon-circle-arrow-right"></span></button></button>
+                    </td><td>
+                        <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Z1">Z+<span class="glyphicon glyphicon-circle-arrow-up"></span></button>
+                            <button type="button" class="btn btn-default btn-gcodeRel" style="margin: 4px 0;" data-content="G0 Y-1">Z-<span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+                        </div>
                 </td></tr></table>
                 </div>
             
