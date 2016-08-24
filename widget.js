@@ -141,6 +141,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             this.btnSetup();
             this.forkSetup();
 
+
             chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus);
             this.setupAxes();
             console.log("I am done being initted.");
