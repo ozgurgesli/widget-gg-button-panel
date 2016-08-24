@@ -197,7 +197,8 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             // of the slick .bind(this) technique to correctly set "this"
             // when the callback is called
             $('#' + this.id + ' .btn-helloworld2').click(this.onHelloBtnClick.bind(this));
-            $('#' + this.id + ' .btn-gcoder').click(this.onGCodeBtnClick.bind(this));
+            $('#' + this.id + ' .btn-gcodeRel').click(this.onGCodeRelBtnClick.bind(this));
+            $('#' + this.id + ' .btn-gcode').click(this.onGCodeBtnClick.bind(this));
 
         },
         
@@ -210,21 +211,26 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             this.sendCtr++;
             if (this.sendCtr > 999999) this.sendCtr = 0;
         },
-        /**
+                /**
          * onGCodeBtnClick sends the gcode command contained in the button, throught the chilipeppr serial port widget
          */
         onGCodeBtnClick: function(evt) {
-            console.log("GCmd: ");
-            
-            
-            
-            var gcode = "G91\nG0 x5\nG0 x-5\nG90";
-//            gcode = ;
-            gcode += "\n"; 
-            
-            alert( $('#' + this.id ).data( 'data-content' ) );
-            this.publishSend( gcode );
 
+            var gcode = $(evt.delegateTarget).data('content');
+            gcode += "\n"; 
+            console.log("GCmd: " + gcode);
+            this.publishSend( gcode );
+        },
+
+        /**
+         * onGCodeRelBtnClick encapsulates the Gcode between G91 and G90 commands, then sends the gcode so that the movements are Relative
+         */
+        onGCodeRelBtnClick: function(evt) {
+            
+            var gcode = 'G91\n' + $(evt.delegateTarget).data('content');
+            gcode += "\nG90\n"; 
+            console.log("GCmd: " + gcode);
+            this.publishSend( gcode );
 
             // chilipeppr.publish(
             //     '/com-chilipeppr-elem-flashmsg/flashmsg',
