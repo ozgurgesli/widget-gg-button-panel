@@ -195,8 +195,34 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             // of the slick .bind(this) technique to correctly set "this"
             // when the callback is called
             $('#' + this.id + ' .btn-helloworld2').click(this.onHelloBtnClick.bind(this));
+            $('#' + this.id + ' .btn-gcoder').click(this.onGCodeBtnClick.bind(this));
 
         },
+        
+        /**
+         * onGCodeBtnClick sends the gcode command contained in the button, throught the chilipeppr serial port widget
+         */
+        onGCodeBtnClick: function(evt) {
+            console.log("saying hello 2 from btn in tab 1");
+            
+            var gcode = "G91\nG0 x5\nG0 x-5\nG90";
+            gcode += "\n"; 
+            //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", gcode); //         i wonder what this is 
+            var jsonSend = {
+                D: gcode,
+                Id: "jog" //  + this.sendCtr
+            };
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/jsonSend", jsonSend);
+
+
+            // chilipeppr.publish(
+            //     '/com-chilipeppr-elem-flashmsg/flashmsg',
+            //     "Hello 2 Title",
+            //     "Hello World 2 from Tab 1 from widget " + this.id,
+            //     2000 /* show for 2 second */
+            // );
+        },
+        
         /**
          * onHelloBtnClick is an example of a button click event callback
          */
