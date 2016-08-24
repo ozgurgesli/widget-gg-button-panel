@@ -127,6 +127,8 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             // Define a key:value pair here as strings to document what signals you subscribe to
             // that are owned by foreign/other widgets.
             // '/com-chilipeppr-elem-dragdrop/ondropped': 'Example: We subscribe to this signal at a higher priority to intercept the signal. We do not let it propagate by returning false.'
+            "/com-chilipeppr-interface-cnccontroller/axes": "We want X,Y,Z,A,MX,MY,MZ,MA axis updates."
+
         },
         /**
          * All widgets should have an init method. It should be run by the
@@ -139,8 +141,61 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             this.btnSetup();
             this.forkSetup();
 
+            chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus);
+            this.setupAxes();
             console.log("I am done being initted.");
         },
+        
+        axisx: null,
+        axisy: null,
+        axisz: null,
+        axisa: null,
+        axes: {},
+        //Machine coord version of axes. 
+        axismx: null,
+        axismy: null,
+        axismz: null,
+        axisma: null,
+        setupAxes: function () {
+            this.axisx = $('#com-ozgurgesli-widget-axis-x');
+            this.axisy = $('#com-ozgurgesli-widget-axis-x');
+            this.axisz = $('#com-ozgurgesli-widget-axis-x');
+            this.axes = {
+                x: this.axisx,
+                y: this.axisy,
+                z: this.axisz,
+            };
+        },
+
+        updateAxesFromStatus: function (axes) {
+            console.log("updateAxesFromStatus:", axes);
+            if ('x' in axes && axes.x !== null) {
+                this.updateAxis("x", axes.x);
+            }
+            if ('y' in axes && axes.y !== null) {
+                this.updateAxis("y", axes.y);
+            }
+            if ('z' in axes && axes.z !== null) {
+                this.updateAxis("z", axes.z);
+            }
+        },
+        updateAxis: function (axis, val) {
+            console.log("updateAxis. axis:", axis, "val:", val);
+            var ax = this.axes[axis];
+            var axl = this.lastVal[axis];
+
+            $(this.axes.x).html( val );
+            alert( val );
+            
+            // if this val is same as last val, return immediately
+            // this happens alot as the cnc controller could send lots of redundant position updates
+            if (val == axl) {
+                //console.log("new val:", val, "is same as last val:", axl, "axis:", axis, "exiting");
+                return;
+            }
+            
+        },
+
         /**
          * Call this method from init to setup all the buttons when this widget
          * is first loaded. This basically attaches click events to your 

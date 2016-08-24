@@ -61,7 +61,15 @@
                 <!--button type="button" class="btn btn-xs btn-default btn-helloworld2" style="margin: 4px 0;">Hello World 2</button-->
             </div>
             <div class="">
-
+                <div>
+                        <div id='com.ozgurgesli.widget.axis-x' class="btn btn-default" data-axis="x">
+                        </div>
+                        <div id='com.ozgurgesli.widget.axis-y' class="btn btn-default" data-axis="y">
+                        </div>
+                        <div id='com.ozgurgesli.widget.axis-y' class="btn btn-default" data-axis="z">
+                        </div>
+                </div>
+                
                 <div class="panel-body panel panel-default  btn-group">
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S0">Motors<br>Off</button>
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S700">Motors<br>700</button>
@@ -69,6 +77,23 @@
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S5000">Motors<br>5000</button>
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S12000">Motors<br>MAX</button>
                 </div>
+
+                <div class="panel-body panel panel-default  btn-group">
+                    <center><span class="glyphicon glyphicon-home"></span>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.2 X0 Y0 Z0">All</button></center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.2 X0">X</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.2 Y0">Y</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.2 Z0">Z</button>
+                </div>
+
+                <div class="panel-body panel panel-default  btn-group">
+                    <center>Zero</span>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 X0 Y0 Z0">All</button></center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 X0">X</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 Y0">Y</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 Z0">Z</button>
+                </div>
+
 
                 <br>
 
