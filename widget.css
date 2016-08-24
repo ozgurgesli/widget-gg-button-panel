@@ -1,10 +1,20 @@
 /* CSS for ChiliPeppr Widget */
 
-#com-chilipeppr-widget-template {
+#com-ozgurgesli-widget-gg-button-panel {
    
 }
 
-#com-chilipeppr-widget-template .nav-tabs>li>a {
+#com-ozgurgesli-widget-gg-button-panel .nav-tabs>li>a {
     padding: 2px 6px;
 }
 
+#com-ozgurgesli-widget-gg-button-panel .dbltall {
+    height:68px;
+}
+
+#com-ozgurgesli-widget-gg-button-panel .row1 {
+    border:1px dashed red;
+}
+#com-ozgurgesli-widget-gg-button-panel .row2 {
+    border:1px dashed blue;
+}
