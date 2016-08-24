@@ -220,7 +220,6 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 
             var gcode = String.fromCharCode(24) + "\n";
             console.log("GCmd: " + gcode);
-//             alert( gcode );
             this.publishSend( gcode );
         },
 
