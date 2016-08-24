@@ -252,7 +252,8 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             var gcode = "G91\nG0 x5\nG0 x-5\nG90";
 //            gcode = ;
             gcode += "\n"; 
-            alert( this.data( 'data-content' ) );
+            
+            alert( $(this.id).data( 'data-content' ) );
             this.publishSend( gcode );
 
 
