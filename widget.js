@@ -199,20 +199,24 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 
         },
         
+        publishSend: function(gcode) {
+            var jsonSend = {
+                D: gcode,
+                Id: "jog" + this.sendCtr
+            };
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/jsonSend", jsonSend);
+            this.sendCtr++;
+            if (this.sendCtr > 999999) this.sendCtr = 0;
+        },
         /**
          * onGCodeBtnClick sends the gcode command contained in the button, throught the chilipeppr serial port widget
          */
         onGCodeBtnClick: function(evt) {
-            console.log("saying hello 2 from btn in tab 1");
+            console.log("GCmd: ");
             
             var gcode = "G91\nG0 x5\nG0 x-5\nG90";
             gcode += "\n"; 
-            //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", gcode); //         i wonder what this is 
-            var jsonSend = {
-                D: gcode,
-                Id: "jog" //  + this.sendCtr
-            };
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/jsonSend", jsonSend);
+            this.publishSend( gcode );
 
 
             // chilipeppr.publish(
