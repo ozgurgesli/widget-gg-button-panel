@@ -202,13 +202,16 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
         axisma: null,
         setupAxes: function () {
             this.axisx = $('#com-ozgurgesli-widget-axis-x');
-            this.axisy = $('#com-ozgurgesli-widget-axis-x');
-            this.axisz = $('#com-ozgurgesli-widget-axis-x');
+            this.axisy = $('#com-ozgurgesli-widget-axis-y');
+            this.axisz = $('#com-ozgurgesli-widget-axis-z');
             this.axes = {
                 x: this.axisx,
                 y: this.axisy,
                 z: this.axisz,
             };
+            $(this.axisx).html( "X" );
+            $(this.axisy).html( "Y" );
+            $(this.axisz).html( "Z" );
         },
 
         updateAxesFromStatus: function (axes) {
@@ -552,11 +555,11 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             </div>
             <div class="">
                 <div>
-                        <div id='com.ozgurgesli.widget.axis-x' class="btn btn-default" data-axis="x">
+                        <div id='com-ozgurgesli-widget-axis-x' class="btn btn-default" data-axis="x">
                         </div>
-                        <div id='com.ozgurgesli.widget.axis-y' class="btn btn-default" data-axis="y">
+                        <div id='com-ozgurgesli-widget-axis-y' class="btn btn-default" data-axis="y">
                         </div>
-                        <div id='com.ozgurgesli.widget.axis-y' class="btn btn-default" data-axis="z">
+                        <div id='com-ozgurgesli-widget-axis-z' class="btn btn-default" data-axis="z">
                         </div>
                 </div>
                 

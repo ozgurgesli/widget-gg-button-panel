@@ -158,13 +158,16 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
         axisma: null,
         setupAxes: function () {
             this.axisx = $('#com-ozgurgesli-widget-axis-x');
-            this.axisy = $('#com-ozgurgesli-widget-axis-x');
-            this.axisz = $('#com-ozgurgesli-widget-axis-x');
+            this.axisy = $('#com-ozgurgesli-widget-axis-y');
+            this.axisz = $('#com-ozgurgesli-widget-axis-z');
             this.axes = {
                 x: this.axisx,
                 y: this.axisy,
                 z: this.axisz,
             };
+            $(this.axisx).html( "X" );
+            $(this.axisy).html( "Y" );
+            $(this.axisz).html( "Z" );
         },
 
         updateAxesFromStatus: function (axes) {
