@@ -239,7 +239,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", gcode);          
             var jsonSend = {
                 D: gcode,
-                Id: "jog" + this.sendCtr
+                Id: "jog" //  + this.sendCtr
             };
             chilipeppr.publish("/com-chilipeppr-widget-serialport/jsonSend", jsonSend);
 
