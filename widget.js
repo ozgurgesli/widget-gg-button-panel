@@ -204,8 +204,8 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             console.log("saying hello 2 from btn in tab 1");
             
             var gcode = "G91\nG0 x5\nG0 x-5\nG90";
-            gcode += "\n";
-            //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", gcode);          
+            gcode += "\n"; 
+            //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", gcode); //         i wonder what this is 
             var jsonSend = {
                 D: gcode,
                 Id: "jog" //  + this.sendCtr
