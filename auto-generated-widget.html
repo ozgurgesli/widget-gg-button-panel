@@ -194,15 +194,17 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
                 }
             });
 
+//            $('#com-ozgurgesli-widget-gg-button-panel .jogx').click("X+", this.jogBtn.bind(this));
+
             // Ask bootstrap to scan all the buttons in the widget to turn
             // on popover menus
-            $('#' + this.id + ' .btn').popover({
-                delay: 1000,
-                animation: true,
-                placement: "auto",
-                trigger: "hover",
-                container: 'body'
-            });
+            // $('#' + this.id + ' .btn').popover({
+            //     delay: 1000,
+            //     animation: true,
+            //     placement: "auto",
+            //     trigger: "hover",
+            //     container: 'body'
+            // });
 
             // Init Say Hello Button on Main Toolbar
             // We are inlining an anonymous method as the callback here
@@ -245,8 +247,12 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
         onGCodeBtnClick: function(evt) {
             console.log("GCmd: ");
             
+            
+            
             var gcode = "G91\nG0 x5\nG0 x-5\nG90";
+//            gcode = ;
             gcode += "\n"; 
+            alert( this.data( 'data-content' ) );
             this.publishSend( gcode );
 
 
