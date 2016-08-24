@@ -253,7 +253,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 //            gcode = ;
             gcode += "\n"; 
             
-            alert( $(this.id).data( 'data-content' ) );
+            alert( $('#' + this.id ).data( 'data-content' ) );
             this.publishSend( gcode );
 
 
