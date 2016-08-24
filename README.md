@@ -1,9 +1,9 @@
-# com-chilipeppr-widget-template
-This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github.
+# com-ozgurgesli-widget-gg-button-panel
+This is a button panel for frequent gcode actions
 
 ![alt text](screenshot.png "Screenshot")
 
-## ChiliPeppr Widget / Template
+## ChiliPeppr Widget / GG Button Panel
 
 All ChiliPeppr widgets/elements are defined using cpdefine() which is a method
 that mimics require.js. Each defined object must have a unique ID so it does
@@ -11,9 +11,9 @@ not conflict with other ChiliPeppr widgets.
 
 | Item                  | Value           |
 | -------------         | ------------- | 
-| ID                    | com-chilipeppr-widget-template |
-| Name                  | Widget / Template |
-| Description           | This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github. |
+| ID                    | com-ozgurgesli-widget-gg-button-panel |
+| Name                  | Widget / GG Button Panel |
+| Description           | This is a button panel for frequent gcode actions |
 | chilipeppr.load() URL | http://raw.githubusercontent.com/ozgurgesli/widget-gg-button-panel/master/auto-generated-widget.html |
 | Edit URL              | http://ide.c9.io/ogesli/widget-gg-button-panel |
 | Github URL            | http://github.com/ozgurgesli/widget-gg-button-panel |
@@ -29,20 +29,20 @@ back the instance of it.
 
 ```javascript
 // Inject new div to contain widget or use an existing div with an ID
-$("body").append('<' + 'div id="myDivWidgetTemplate"><' + '/div>');
+$("body").append('<' + 'div id="myDivComOzgurgesliWidgetGgButtonPanel"><' + '/div>');
 
 chilipeppr.load(
-  "#myDivWidgetTemplate",
+  "#myDivComOzgurgesliWidgetGgButtonPanel",
   "http://raw.githubusercontent.com/ozgurgesli/widget-gg-button-panel/master/auto-generated-widget.html",
   function() {
-    // Callback after widget loaded into #myDivWidgetTemplate
+    // Callback after widget loaded into #myDivComOzgurgesliWidgetGgButtonPanel
     // Now use require.js to get reference to instantiated widget
     cprequire(
-      ["inline:com-chilipeppr-widget-template"], // the id you gave your widget
-      function(myObjWidgetTemplate) {
+      ["inline:com-ozgurgesli-widget-gg-button-panel"], // the id you gave your widget
+      function(myObjComOzgurgesliWidgetGgButtonPanel) {
         // Callback that is passed reference to the newly loaded widget
-        console.log("Widget / Template just got loaded.", myObjWidgetTemplate);
-        myObjWidgetTemplate.init();
+        console.log("Widget / GG Button Panel just got loaded.", myObjComOzgurgesliWidgetGgButtonPanel);
+        myObjComOzgurgesliWidgetGgButtonPanel.init();
       }
     );
   }
@@ -64,7 +64,7 @@ To better understand how ChiliPeppr's subscribe() method works see amplify.js's 
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>/com-chilipeppr-widget-template/onExampleGenerate</td><td>Example: Publish this signal when we go to generate gcode.</td></tr>    
+      <tr valign="top"><td>/com-ozgurgesli-widget-gg-button-panel/onExampleGenerate</td><td>Example: Publish this signal when we go to generate gcode.</td></tr>    
       </tbody>
   </table>
 
@@ -132,7 +132,7 @@ The table below shows, in order, the methods and properties inside the widget/el
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-widget-template"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Widget / Template"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/ozgurgesli/widget-gg-button-panel/master/auto-generated-widget.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/ogesli/widget-gg-button-panel"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/ozgurgesli/widget-gg-button-panel"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://widget-gg-button-panel-ogesli.c9users.io/widget.html"</td></tr><tr valign="top"><td>publish</td><td>object</td><td>Please see docs above.<br><br>Define the publish signals that this widget/element owns or defines so that
+      <tr valign="top"><td>id</td><td>string</td><td>"com-ozgurgesli-widget-gg-button-panel"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Widget / GG Button Panel"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This is a button panel for frequent gcode actions"</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/ozgurgesli/widget-gg-button-panel/master/auto-generated-widget.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/ogesli/widget-gg-button-panel"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/ozgurgesli/widget-gg-button-panel"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://widget-gg-button-panel-ogesli.c9users.io/widget.html"</td></tr><tr valign="top"><td>publish</td><td>object</td><td>Please see docs above.<br><br>Define the publish signals that this widget/element owns or defines so that
 other widgets know how to subscribe to them and what they do.</td></tr><tr valign="top"><td>subscribe</td><td>object</td><td>Please see docs above.<br><br>Define the subscribe signals that this widget/element owns or defines so that
 other widgets know how to subscribe to them and what they do.</td></tr><tr valign="top"><td>foreignPublish</td><td>object</td><td>Please see docs above.<br><br>Document the foreign publish signals, i.e. signals owned by other widgets
 or elements, that this widget/element publishes to.</td></tr><tr valign="top"><td>foreignSubscribe</td><td>object</td><td>Please see docs above.<br><br>Document the foreign subscribe signals, i.e. signals owned by other widgets
