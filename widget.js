@@ -203,6 +203,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 
         },
         
+        
         publishSend: function(gcode) {
             var jsonSend = {
                 D: gcode,
