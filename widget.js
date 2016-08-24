@@ -116,6 +116,8 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             // Define a key:value pair here as strings to document what signals you publish to
             // that are owned by foreign/other widgets.
             // '/jsonSend': 'Example: We send Gcode to the serial port widget to do stuff with the CNC controller.'
+            '/com-chilipeppr-widget-serialport/send': "We publish to the serial port Gcode jog commands"
+
         },
         /**
          * Document the foreign subscribe signals, i.e. signals owned by other widgets
@@ -200,12 +202,23 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          */
         onHelloBtnClick: function(evt) {
             console.log("saying hello 2 from btn in tab 1");
-            chilipeppr.publish(
-                '/com-chilipeppr-elem-flashmsg/flashmsg',
-                "Hello 2 Title",
-                "Hello World 2 from Tab 1 from widget " + this.id,
-                2000 /* show for 2 second */
-            );
+            
+            var gcode = "$$";
+            gcode += "\n";
+            //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", gcode);          
+            var jsonSend = {
+                D: gcode,
+                Id: "jog" + this.sendCtr
+            };
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/jsonSend", jsonSend);
+
+
+            // chilipeppr.publish(
+            //     '/com-chilipeppr-elem-flashmsg/flashmsg',
+            //     "Hello 2 Title",
+            //     "Hello World 2 from Tab 1 from widget " + this.id,
+            //     2000 /* show for 2 second */
+            // );
         },
         /**
          * User options are available in this property for reference by your

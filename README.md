@@ -98,7 +98,7 @@ To better understand how ChiliPeppr's subscribe() method works see amplify.js's 
           </tr>
       </thead>
       <tbody>
-      <tr><td colspan="2">(No signals defined in this widget/element)</td></tr>    
+      <tr valign="top"><td>/com-ozgurgesli-widget-gg-button-panel/com-chilipeppr-widget-serialport/send</td><td>We publish to the serial port Gcode jog commands</td></tr>    
       </tbody>
   </table>
 
