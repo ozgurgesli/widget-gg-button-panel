@@ -199,6 +199,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             $('#' + this.id + ' .btn-helloworld2').click(this.onHelloBtnClick.bind(this));
             $('#' + this.id + ' .btn-gcodeRel').click(this.onGCodeRelBtnClick.bind(this));
             $('#' + this.id + ' .btn-gcode').click(this.onGCodeBtnClick.bind(this));
+            $('#' + this.id + ' .btn-tinygreset').click(this.onResetBtnClick.bind(this));
 
         },
         
@@ -211,7 +212,19 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             this.sendCtr++;
             if (this.sendCtr > 999999) this.sendCtr = 0;
         },
-                /**
+
+        /**
+         * onResetBtnClick sends reset command to tinyg
+         */
+        onResetBtnClick: function(evt) {
+
+            var gcode = String.fromCharCode(24) + "\n";
+            console.log("GCmd: " + gcode);
+//             alert( gcode );
+            this.publishSend( gcode );
+        },
+
+        /**
          * onGCodeBtnClick sends the gcode command contained in the button, throught the chilipeppr serial port widget
          */
         onGCodeBtnClick: function(evt) {
