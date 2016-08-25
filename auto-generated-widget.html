@@ -180,7 +180,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          */
         init: function() {
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b6")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b7")
 
             this.debugout("GGL: " + this.id + " being inited");
 
@@ -224,17 +224,20 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             $('#com-ozgurgesli-widget-gg-button-panel-debug').val( $('#com-ozgurgesli-widget-gg-button-panel-debug').val( ) + "\n" + text );
         },
         updateAxesFromStatus: function (axes) {
-            this.debugout("GGL: updateAxesFromStatus");
+            this.debugout("GGL: updateAxesFromStatus x:"+axes.x + " y:" + axes.y + " z:" + axes.z);
+            
+            $(this.axisx).html( "X" );
+
             if ('x' in axes && axes.x !== null) {
-                $(this.axisx).html( "X:"+val );
+                $(this.axisx).html( "X:"+axes.x );
 //                this.updateAxis("x", axes.x);
             }
             if ('y' in axes && axes.y !== null) {
-                $(this.axisy).html( "Y:" +val );
+                $(this.axisy).html( "Y:" +axes.y );
 //                this.updateAxis("y", axes.y);
             }
             if ('z' in axes && axes.z !== null) {
-                $(this.axisz).html( "Z:"+val );
+                $(this.axisz).html( "Z:"+axes.z );
 //                this.updateAxis("z", axes.z);
             }
         },
