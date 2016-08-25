@@ -135,9 +135,11 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          * instantiating code like a workspace or a different widget.
          */
         init: function() {
-            console.log("GGL: " + this.id + " being inited");
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b1")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b2")
+
+            this.debugout("GGL: " + this.id + " being inited");
+
             this.setupUiFromLocalStorage();
             this.btnSetup();
             this.forkSetup();
@@ -145,6 +147,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 
             chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus);
             this.setupAxes();
+
             console.log("I am done being initted.");
         },
         
@@ -167,14 +170,17 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
                 y: this.axisy,
                 z: this.axisz,
             };
+            this.debugout("GGL: setupAxes Done\n");
+        },
+        debugout: function (text) {
+            $('#com-ozgurgesli-widget-gg-button-panel-debug').val( $('#com-ozgurgesli-widget-gg-button-panel-debug').val( ) + "\n" + text );
+        },
+        updateAxesFromStatus: function (axes) {
             $(this.axisx).html( "X" );
             $(this.axisy).html( "Y" );
             $(this.axisz).html( "Z" );            
-            console.log("GGL: setupAxes Done\n");
-        },
-
-        updateAxesFromStatus: function (axes) {
-            console.log("GGL: updateAxesFromStatus:", axes);
+            
+            this.debugout("GGL: updateAxesFromStatus:" + axes);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }

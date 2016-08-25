@@ -179,9 +179,11 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          * instantiating code like a workspace or a different widget.
          */
         init: function() {
-            console.log("GGL: " + this.id + " being inited");
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b1")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b2")
+
+            this.debugout("GGL: " + this.id + " being inited");
+
             this.setupUiFromLocalStorage();
             this.btnSetup();
             this.forkSetup();
@@ -189,6 +191,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 
             chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus);
             this.setupAxes();
+
             console.log("I am done being initted.");
         },
         
@@ -211,14 +214,17 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
                 y: this.axisy,
                 z: this.axisz,
             };
+            this.debugout("GGL: setupAxes Done\n");
+        },
+        debugout: function (text) {
+            $('#com-ozgurgesli-widget-gg-button-panel-debug').val( $('#com-ozgurgesli-widget-gg-button-panel-debug').val( ) + "\n" + text );
+        },
+        updateAxesFromStatus: function (axes) {
             $(this.axisx).html( "X" );
             $(this.axisy).html( "Y" );
             $(this.axisz).html( "Z" );            
-            console.log("GGL: setupAxes Done\n");
-        },
-
-        updateAxesFromStatus: function (axes) {
-            console.log("GGL: updateAxesFromStatus:", axes);
+            
+            this.debugout("GGL: updateAxesFromStatus:" + axes);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }
@@ -784,7 +790,11 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
                     <button type="button" class="btn btn-default btn-danger btn-gcode" style="margin: 4px 0;" data-content='{"me":""}\n'><span style="opacity:1.0" class="glyphicon glyphicon-flash"></span></button>
                     <button type="button" class="btn btn-default btn-gcode" style="margin: 4px 0;" data-content='{"md":""}\n'><span style="opacity:0.5" class="glyphicon glyphicon-flash"></span></button>
                 </div>
-
+                <div class='container-fluid'>
+                    <div class='col-md-12'>
+                        <textarea placeholder="Debug pane" id="com-ozgurgesli-widget-gg-button-panel-debug" class="col-md-9 main-description-text" style='width:100%;'></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
