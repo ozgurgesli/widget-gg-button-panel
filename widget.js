@@ -135,8 +135,9 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          * instantiating code like a workspace or a different widget.
          */
         init: function() {
-            console.log("I am being initted. Thanks.");
+            console.log("GGL: " + this.id + " being inited");
 
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b1")
             this.setupUiFromLocalStorage();
             this.btnSetup();
             this.forkSetup();
@@ -168,11 +169,12 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             };
             $(this.axisx).html( "X" );
             $(this.axisy).html( "Y" );
-            $(this.axisz).html( "Z" );
+            $(this.axisz).html( "Z" );            
+            console.log("GGL: setupAxes Done\n");
         },
 
         updateAxesFromStatus: function (axes) {
-            console.log("updateAxesFromStatus:", axes);
+            console.log("GGL: updateAxesFromStatus:", axes);
             if ('x' in axes && axes.x !== null) {
                 this.updateAxis("x", axes.x);
             }
@@ -184,7 +186,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             }
         },
         updateAxis: function (axis, val) {
-            console.log("updateAxis. axis:", axis, "val:", val);
+            console.log("GGL: updateAxis. axis:", axis, "val:", val);
             var ax = this.axes[axis];
             var axl = this.lastVal[axis];
 
