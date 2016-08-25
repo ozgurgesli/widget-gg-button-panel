@@ -136,9 +136,9 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          */
         init: function() {
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b7")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b8")
 
-            this.debugout("GGL: " + this.id + " being inited");
+//            this.debugout("GGL: " + this.id + " being inited");
 
             this.setupUiFromLocalStorage();
             this.btnSetup();
@@ -171,7 +171,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
                 y: this.axisy,
                 z: this.axisz,
             };
-            this.debugout("GGL: setupAxes Done\n");
+//            this.debugout("GGL: setupAxes Done\n");
             $(this.axisx).html( "X" );
             $(this.axisy).html( "Y" );
             $(this.axisz).html( "Z" );           
@@ -180,10 +180,8 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             $('#com-ozgurgesli-widget-gg-button-panel-debug').val( $('#com-ozgurgesli-widget-gg-button-panel-debug').val( ) + "\n" + text );
         },
         updateAxesFromStatus: function (axes) {
-            this.debugout("GGL: updateAxesFromStatus x:"+axes.x + " y:" + axes.y + " z:" + axes.z);
+//            this.debugout("GGL: updateAxesFromStatus x:"+axes.x + " y:" + axes.y + " z:" + axes.z);
             
-            $(this.axisx).html( "X" );
-
             if ('x' in axes && axes.x !== null) {
                 $(this.axisx).html( "X:"+axes.x );
 //                this.updateAxis("x", axes.x);
@@ -294,7 +292,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
         onResetBtnClick: function(evt) {
 
             var gcode = String.fromCharCode(24) + "\n";
-            this.debugout("GCmd: " + gcode);
+//            this.debugout("GCmd: " + gcode);
             this.publishSend( gcode );
         },
 
@@ -305,7 +303,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 
             var gcode = $(evt.delegateTarget).data('content');
             gcode += "\n"; 
-            this.debugout("GCmd: " + gcode);
+//            this.debugout("GCmd: " + gcode);
 //             alert( gcode );
             this.publishSend( gcode );
         },
@@ -317,7 +315,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             
             var gcode = 'G91\n' + $(evt.delegateTarget).data('content');
             gcode += "\nG90\n"; 
-            this.debugout("GCmd: " + gcode);
+//            this.debugout("GCmd: " + gcode);
             this.publishSend( gcode );
 
             // chilipeppr.publish(
