@@ -136,14 +136,14 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          */
         init: function() {
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b3")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b5")
 
             this.debugout("GGL: " + this.id + " being inited");
 
             this.setupUiFromLocalStorage();
             this.btnSetup();
             this.forkSetup();
-
+ 
 
             chilipeppr.subscribe("/com-chilipeppr-interface-cnccontroller/axes", this, this.updateAxesFromStatus);
             this.setupAxes();
@@ -177,29 +177,29 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             $('#com-ozgurgesli-widget-gg-button-panel-debug').val( $('#com-ozgurgesli-widget-gg-button-panel-debug').val( ) + "\n" + text );
         },
         updateAxesFromStatus: function (axes) {
-            $(this.axisx).html( "X" );
-            $(this.axisy).html( "Y" );
-            $(this.axisz).html( "Z" );            
-            
-            this.debugout("GGL: updateAxesFromStatus:" + axes);
+            this.debugout("GGL: updateAxesFromStatus");
             if ('x' in axes && axes.x !== null) {
-                this.updateAxis("x", axes.x);
+                $(this.axis.x).text( "X:"+val );
+//                this.updateAxis("x", axes.x);
             }
             if ('y' in axes && axes.y !== null) {
-                this.updateAxis("y", axes.y);
+                $(this.axis.y).text( "Y:" +val );
+//                this.updateAxis("y", axes.y);
             }
             if ('z' in axes && axes.z !== null) {
-                this.updateAxis("z", axes.z);
+                $(this.axis.z).text( "Z:"+val );
+//                this.updateAxis("z", axes.z);
             }
         },
+        
         updateAxis: function (axis, val) {
-            this.debugout("GGL: updateAxis. axis:" +  axis +  "  val:" +  val);
+
+            this.debugout("GGL: updateAxis(" +  axis +  ", :" +  val);
             var ax = this.axes[axis];
-            var axl = this.lastVal[axis];
+//            var axl = this.lastVal[axis];
 
             $(this.axes.x).html( val );
-            alert( val );
-            
+
             // if this val is same as last val, return immediately
             // this happens alot as the cnc controller could send lots of redundant position updates
             if (val == axl) {
