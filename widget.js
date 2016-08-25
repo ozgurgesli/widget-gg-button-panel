@@ -136,7 +136,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          */
         init: function() {
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b2")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b3")
 
             this.debugout("GGL: " + this.id + " being inited");
 
@@ -192,7 +192,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             }
         },
         updateAxis: function (axis, val) {
-            console.log("GGL: updateAxis. axis:", axis, "val:", val);
+            this.debugout("GGL: updateAxis. axis:" +  axis +  "  val:" +  val);
             var ax = this.axes[axis];
             var axl = this.lastVal[axis];
 
@@ -287,7 +287,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
         onResetBtnClick: function(evt) {
 
             var gcode = String.fromCharCode(24) + "\n";
-            console.log("GCmd: " + gcode);
+            this.debugout("GCmd: " + gcode);
             this.publishSend( gcode );
         },
 
@@ -298,7 +298,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
 
             var gcode = $(evt.delegateTarget).data('content');
             gcode += "\n"; 
-            console.log("GCmd: " + gcode);
+            this.debugout("GCmd: " + gcode);
 //             alert( gcode );
             this.publishSend( gcode );
         },
@@ -310,7 +310,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
             
             var gcode = 'G91\n' + $(evt.delegateTarget).data('content');
             gcode += "\nG90\n"; 
-            console.log("GCmd: " + gcode);
+            this.debugout("GCmd: " + gcode);
             this.publishSend( gcode );
 
             // chilipeppr.publish(
