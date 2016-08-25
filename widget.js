@@ -136,7 +136,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          */
         init: function() {
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b8")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b9")
 
 //            this.debugout("GGL: " + this.id + " being inited");
 

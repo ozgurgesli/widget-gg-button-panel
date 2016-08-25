@@ -38,7 +38,7 @@
         <div class="panel-heading ">
             <div class="btn-toolbar pull-right" role="toolbar">
                 <div class="btn-group">
-                    <span>H v0.9 b5</span> 
+                    <span>H v0.9 b6</span> 
                     <span id='com-ozgurgesli-widget-gg-button-panel-codeversion'>C:</span> 
                     <!--button type="button" class="btn btn-xs btn-default btn-sayhello" data-delay="1000" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Say Hello" data-content="Generate a hello message">Say Hello
                     </button-->
@@ -62,23 +62,7 @@
                 <!--button type="button" class="btn btn-xs btn-default btn-helloworld2" style="margin: 4px 0;">Hello World 2</button-->
             </div>
             <div class="">
-                <div>
-                        <div id='com-ozgurgesli-widget-axis-x' class="btn btn-default" data-axis="x">
-                        </div>
-                        <div id='com-ozgurgesli-widget-axis-y' class="btn btn-default" data-axis="y">
-                        </div>
-                        <div id='com-ozgurgesli-widget-axis-z' class="btn btn-default" data-axis="z">
-                        </div>
-                </div>
                 
-                <div class="panel-body panel panel-default  btn-group">
-                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S0">Motors<br>Off</button>
-                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S700">Motors<br>700</button>
-                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S1000">Motors<br>1000</button>
-                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S5000">Motors<br>5000</button>
-                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S12000">Motors<br>MAX</button>
-                </div>
-
                 <div class="panel-body panel panel-default  btn-group">
                     <center><span class="glyphicon glyphicon-home"></span>
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.2 X0 Y0 Z0">All</button></center>
@@ -88,13 +72,35 @@
                 </div>
 
                 <div class="panel-body panel panel-default  btn-group">
-                    <center>Zero</span>
+                    <center>Zero
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 X0 Y0 Z0">All</button></center>
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 X0">X</button>
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 Y0">Y</button>
                     <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G28.3 Z0">Z</button>
                 </div>
 
+                <div class="panel-body panel panel-default  btn-group">
+                    <center>Clear</center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G10 L2 P1 x0 y0 z0">G54</button></center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G10 L2 P2 x0 y0 z0">G55</button></center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G10 L2 P3 x0 y0 z0">G56</button></center>
+                </div>
+
+                <div class="panel-body panel panel-default  btn-group">
+                    <center>Select</center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G54">G54</button></center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G55">G55</button></center>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="G56">G56</button></center>
+                </div>
+
+                <div>
+                        <div id='com-ozgurgesli-widget-axis-x' class="btn btn-default" data-axis="x">
+                        </div>
+                        <div id='com-ozgurgesli-widget-axis-y' class="btn btn-default" data-axis="y">
+                        </div>
+                        <div id='com-ozgurgesli-widget-axis-z' class="btn btn-default" data-axis="z">
+                        </div>
+                </div>
 
                 <br>
 
@@ -278,6 +284,7 @@
                     </table>
                 </div>
 
+
                 <div class='btn-group' style="margin:10px;"> 
                     <button type="button" class="btn btn-default btn-success btn-gcode" style="margin: 4px 0;" data-content="!">Feedhold !</button>
                     <button type="button" class="btn btn-default btn-gcode" style="margin: 4px 0;" data-content="%">Wipe %</button>
@@ -288,6 +295,16 @@
                     <button type="button" class="btn btn-default btn-danger btn-gcode" style="margin: 4px 0;" data-content='{"me":""}\n'><span style="opacity:1.0" class="glyphicon glyphicon-flash"></span></button>
                     <button type="button" class="btn btn-default btn-gcode" style="margin: 4px 0;" data-content='{"md":""}\n'><span style="opacity:0.5" class="glyphicon glyphicon-flash"></span></button>
                 </div>
+                
+                <div class="panel-body panel panel-default  btn-group">
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S0">Motors<br>Off</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S700">Motors<br>700</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S1000">Motors<br>1000</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S5000">Motors<br>5000</button>
+                    <button type="button" class="btn btn-xs btn-default btn-gcode" style="margin: 4px 0;" data-content="M03 S12000">Motors<br>MAX</button>
+                </div>
+
+                
                 <div class='container-fluid hidden'>
                     <div class='col-md-12'>
                         <textarea placeholder="Debug pane" id="com-ozgurgesli-widget-gg-button-panel-debug" class="col-md-9 main-description-text" style='width:100%;'></textarea>
