@@ -136,7 +136,7 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
          */
         init: function() {
 
-            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b5")
+            $( '#com-ozgurgesli-widget-gg-button-panel-codeversion').html( "C: b6")
 
             this.debugout("GGL: " + this.id + " being inited");
 
@@ -172,6 +172,9 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
                 z: this.axisz,
             };
             this.debugout("GGL: setupAxes Done\n");
+            $(this.axisx).html( "X" );
+            $(this.axisy).html( "Y" );
+            $(this.axisz).html( "Z" );           
         },
         debugout: function (text) {
             $('#com-ozgurgesli-widget-gg-button-panel-debug').val( $('#com-ozgurgesli-widget-gg-button-panel-debug').val( ) + "\n" + text );
@@ -179,15 +182,15 @@ cpdefine("inline:com-ozgurgesli-widget-gg-button-panel", ["chilipeppr_ready", /*
         updateAxesFromStatus: function (axes) {
             this.debugout("GGL: updateAxesFromStatus");
             if ('x' in axes && axes.x !== null) {
-                $(this.axis.x).text( "X:"+val );
+                $(this.axisx).html( "X:"+val );
 //                this.updateAxis("x", axes.x);
             }
             if ('y' in axes && axes.y !== null) {
-                $(this.axis.y).text( "Y:" +val );
+                $(this.axisy).html( "Y:" +val );
 //                this.updateAxis("y", axes.y);
             }
             if ('z' in axes && axes.z !== null) {
-                $(this.axis.z).text( "Z:"+val );
+                $(this.axisz).html( "Z:"+val );
 //                this.updateAxis("z", axes.z);
             }
         },
